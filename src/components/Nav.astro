@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import NavLink from "./NavLink.astro";
+---
+
+<nav class="flex justify-between align-center px-8 py-6">
+  <a href="/">
+    <Image
+      src="/logo.png"
+      alt="Heartbeat of Columbiana County logo"
+      height={120}
+      width={160}
+    /></a
+  >
+
+  <div class="group flex justify-end gap-4">
+    <NavLink href="/services" text="Services" />
+    <NavLink href="/parenting-support" text="Parenting Support" />
+    <NavLink href="/events" text="Events" />
+    <NavLink href="/participate" text="Participate" />
+    <NavLink href="/about" text="About" />
+    <NavLink href="/give" text="Give" />
+  </div>
+</nav>
