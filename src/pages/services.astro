@@ -1,9 +1,68 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import Horizontal from "../components/Horizontal.astro";
+import ImageSection from "../components/ImageSection.astro";
 ---
 
 <Layout title="Services">
-  <Hero />
-  <h1>Services</h1>
+  <Hero image="/assets/super-baby.jpg" />
+  <section id="who-we-help">
+    <h2>How We Help</h2>
+    <Horizontal />
+    <p>
+      We offer three unique services to help babies, women and families
+      experience life: Ava, Cornerstone, and Freedom in Surrender.
+    </p>
+  </section>
+  <ImageSection
+    image="/assets/ava-backdrop.jpg"
+    logo="/assets/ava-logo.png"
+    logoAlt="Ava logo"
+    text="Caring for the health of women at no cost to them."
+    href="/services/ava"
+    buttonText="Learn More"
+  />
+  <ImageSection
+    image="/assets/cornerstone-backdrop.jpg"
+    logo="/assets/cornerstone-logo.png"
+    logoAlt="Ava logo"
+    text="Begin the journey to good parenting today!"
+    href="/services/cornerstone"
+    buttonText="Learn More"
+    imagePos="right"
+  />
+  <ImageSection
+    image="/assets/freedom-backdrop.jpg"
+    logo="/assets/freedom-logo.png"
+    logoAlt="Ava logo"
+    text="Where hurting women find a path to healing."
+    href="/services/freedom-in-surrender"
+    buttonText="Learn More"
+  />
 </Layout>
+
+<style>
+  section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0;
+    width: 100%;
+  }
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+    width: fit-content;
+  }
+  p {
+    font-size: 1.2rem;
+    line-height: 180%;
+    max-width: 70ch;
+    text-align: center;
+  }
+  #who-we-help {
+    background: var(--gray-100);
+  }
+</style>
