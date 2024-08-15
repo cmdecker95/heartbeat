@@ -39,6 +39,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+    <!-- Font Awesome -->
+    <script
+      is:inline
+      src="https://kit.fontawesome.com/f9c20afa88.js"
+      crossorigin="anonymous"></script>
+
     <title>{title}</title>
   </head>
   <body>
