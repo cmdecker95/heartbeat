@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import BlogCarousel from "../components/BlogCarousel.astro";
 import Horizontal from "../components/Horizontal.astro";
 
+const peopleBlogs = [
+  { title: "Challenges Give Way To Hope", slug: "challenges-give-way-to-hope" },
+];
 ---
 
 <Layout title="Home">
@@ -20,6 +23,7 @@ import Horizontal from "../components/Horizontal.astro";
     </section>
     <section id="people">
       <h2>Meet Some Of The People We've Helped</h2>
+      <BlogCarousel blogs={peopleBlogs} />
     </section>
     <section id="announcements">
       <h2>See What's Happening At Heartbeat</h2>
