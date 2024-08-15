@@ -1,0 +1,113 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  image: string;
+  logo: string;
+  logoAlt: string;
+  text: string;
+  href: string;
+  buttonText: string;
+  imagePos?: string;
+}
+
+const {
+  image,
+  logo,
+  logoAlt,
+  text,
+  href,
+  buttonText,
+  imagePos = "left",
+} = Astro.props;
+---
+
+<section>
+  {
+    imagePos === "left" && (
+      <div style={{ backgroundImage: `url(${image})` }} class="image">
+        <div class="logo">
+          <Image src={logo} alt={logoAlt} height={300} width={300} />
+        </div>
+      </div>
+    )
+  }
+  <main>
+    <div class="main-content">
+      <p>{text}</p>
+      <a {href}> <span> {buttonText}</span></a>
+    </div>
+  </main>
+  {
+    imagePos === "right" && (
+      <div style={{ backgroundImage: `url(${image})` }} class="image">
+        <div class="logo">
+          <Image src={logo} alt={logoAlt} height={300} width={300} />
+        </div>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 650px;
+    width: 100%;
+  }
+  .image {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+  }
+  .logo {
+    backdrop-filter: saturate(70%) contrast(50%) brightness(110%);
+    display: grid;
+    height: 100%;
+    place-items: center;
+    transition: 0.5s ease;
+    width: 100%;
+  }
+  section:hover .logo {
+    backdrop-filter: none;
+  }
+  main {
+    display: grid;
+    place-items: center;
+  }
+  .main-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+  p {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin: 0 auto;
+    max-width: 70%;
+    text-align: center;
+    text-wrap: balance;
+  }
+  a {
+    background: var(--main-600);
+    border-radius: 300px;
+    display: grid;
+    height: 100%;
+    padding: 0.8rem 1.8rem;
+    place-items: center;
+    text-decoration: none;
+    transition: 0.1s ease;
+    width: fit-content;
+  }
+  a:hover {
+    background: var(--main-500);
+  }
+  span {
+    color: var(--white);
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+</style>
