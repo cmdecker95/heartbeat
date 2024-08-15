@@ -17,6 +17,8 @@ const socials = [
     icon: "fa-solid fa-hand-holding-heart",
   },
 ];
+
+const today = new Date();
 ---
 
 <footer>
@@ -35,6 +37,9 @@ const socials = [
     <a href="/events">Events</a>
     <a href="/participate">Participate</a>
   </ul>
+  <p class="copyright">
+    &copy; {today.getFullYear()} Heartbeat of Columbiana County
+  </p>
 </footer>
 
 <style>
@@ -77,5 +82,14 @@ const socials = [
   }
   #sitemap a:hover {
     color: var(--white);
+  }
+  .copyright {
+    background: var(--gray-600);
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    font-weight: 200;
+    text-align: center;
+    padding-bottom: 2rem;
+    width: 100%;
   }
 </style>
