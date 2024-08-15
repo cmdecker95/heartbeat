@@ -1,0 +1,149 @@
+---
+import Layout from "@layouts/Layout.astro";
+import ContentOnImage from "@components/ContentOnImage.astro";
+import TwoSection from "@components/TwoSection.astro";
+---
+
+<Layout
+  title="Events"
+  description="The upcoming events for Heartbeat of Columbiana County"
+>
+  <header>
+    <h1>We Hold 2 Major Events Each Year</h1>
+    <p>These events serve three powerful purposes</p>
+  </header>
+
+  <ul>
+    <li>
+      <i class="fa-regular fa-bullhorn"></i>
+      <strong>Awareness</strong>
+      <p>Create awareness in our community regarding abortion.</p>
+    </li>
+    <li>
+      <i class="fa-regular fa-piggy-bank"></i>
+      <strong>Funding</strong>
+      <p>
+        Raise funding for our efforts in protecting unborn lives and
+        strengthening families.
+      </p>
+    </li>
+    <li>
+      <i class="fa-regular fa-party-horn"></i>
+      <strong>Celebration</strong>
+      <p>
+        Celebrate the amazing things God is doing through Heartbeat's
+        ministries.
+      </p>
+    </li>
+  </ul>
+
+  <TwoSection>
+    <ContentOnImage
+      slot="1"
+      image="/assets/vision-banquet.jpg"
+      height="650px"
+      width="100%"
+    >
+      <h2>Vision Banquet</h2>
+    </ContentOnImage>
+    <article slot="2">
+      <p>
+        Each spring, we host two Vision Banquets on back-to-back nights. Vision
+        Hosts invite a table full of friends and family who share their passion
+        for pro-life ministry. After a beautiful dinner, we have a special
+        program that helps our guests understand our mission and values. We
+        share stories of God's faithfulness from the previous year. At the end
+        of the evening, our guests have an opportunity to make a financial
+        contribution. Our annual banquets have become extraordinary events that
+        many of our supporters look forward to each year.
+      </p>
+    </article>
+  </TwoSection>
+  <TwoSection>
+    <article slot="1">
+      <p>
+        In the fall, on the second Saturday of October, pro-life supporters from
+        the tri-state area gather for our annual Walk for Life. This event is a
+        fun-filled, family-friendly walk. Walkers converge with pledge forms in
+        hand, and we begin with a continental breakfast provided by local
+        businesses. After walking, we celebrate awards over a complimentary
+        picnic lunch donated by local businesses. Every walker with at least $50
+        in pledges receives a free t-shirt, and there are gifts for those
+        raising $250 and $500.
+      </p>
+    </article>
+    <ContentOnImage
+      slot="2"
+      image="/assets/walk.png"
+      height="650px"
+      width="100%"
+    >
+      <h2>Walk For Life</h2>
+    </ContentOnImage>
+  </TwoSection>
+
+  <style>
+    header {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin: 4rem 0;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      color: var(--gray-600);
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem;
+      margin: 4rem;
+    }
+    li {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    li i {
+      color: var(--main-600);
+      font-size: 4rem;
+    }
+    li strong {
+      font-size: 2rem;
+    }
+    li p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 150%;
+      max-width: 35ch;
+      text-align: center;
+      text-wrap: balance;
+    }
+    h2 {
+      color: var(--white);
+      font-size: 3rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    article {
+      display: grid;
+      max-height: 650px;
+      place-items: center;
+    }
+    article p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 180%;
+      margin: auto;
+      max-width: 45ch;
+      text-wrap: balance;
+    }
+  </style>
+</Layout>
