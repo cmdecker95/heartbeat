@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Carousel from "../components/Carousel.astro";
+import BlogCarousel from "../components/BlogCarousel.astro";
 import Horizontal from "../components/Horizontal.astro";
+
 ---
 
 <Layout title="Home">
@@ -19,15 +20,14 @@ import Horizontal from "../components/Horizontal.astro";
     </section>
     <section id="people">
       <h2>Meet Some Of The People We've Helped</h2>
-      <Carousel />
     </section>
     <section id="announcements">
       <h2>See What's Happening At Heartbeat</h2>
-      <Carousel />
+      <BlogCarousel />
     </section>
     <section id="beyond">
       <h2>Pro-Life Beyond Heartbeat</h2>
-      <Carousel />
+      <BlogCarousel />
     </section>
   </main>
 </Layout>
