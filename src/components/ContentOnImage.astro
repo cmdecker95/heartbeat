@@ -1,11 +1,11 @@
 ---
 interface Props {
   image: string;
-  height: string;
-  width: string;
+  height?: string;
+  width?: string;
 }
 
-const { image, height, width } = Astro.props;
+const { image, height = "500px", width = "100%" } = Astro.props;
 ---
 
 <div
@@ -24,9 +24,7 @@ const { image, height, width } = Astro.props;
 <style>
   .backdrop {
     background-size: cover;
-    height: 500px;
-    position: relative;
-    width: 100%;
+    background-position: center;
   }
   .overlay {
     backdrop-filter: saturate(70%) contrast(50%) brightness(110%);
