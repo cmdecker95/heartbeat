@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Carousel from "../components/Carousel.astro";
+import Horizontal from "../components/Horizontal.astro";
+---
+
+<Layout title="Heartbeat" description="">
+  <main>
+    <section id="heartbeat">
+      <h2>Our Heartbeat</h2>
+      <Horizontal />
+      <p class="mt-2 text-lg text-center max-w-3xl">
+        We provide a safe and confidential environment for women to receive
+        loving counseling, helpful information and free services. We offer three
+        unique services to help babies, women and families experience life: our
+        medical women’s center, Cornerstone Parenting Center, and Freedom in
+        Surrender.
+      </p>
+    </section>
+    <section id="people">
+      <h2>Meet Some Of The People We've Helped</h2>
+      <Carousel />
+    </section>
+    <section id="announcements">
+      <h2>See What's Happening At Heartbeat</h2>
+      <Carousel />
+    </section>
+    <section id="beyond">
+      <h2>Pro-Life Beyond Heartbeat</h2>
+      <Carousel />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+  section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0;
+    width: 100%;
+  }
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    width: fit-content;
+  }
+  p {
+    font-size: 1.2rem;
+    line-height: 180%;
+    max-width: 70ch;
+    text-align: center;
+  }
+  #announcements {
+    background: var(--gray-100);
+  }
+</style>
