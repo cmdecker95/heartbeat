@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --white: rgb(255, 255, 255);
+  --gray-100: rgb(238, 238, 238);
+  --gray-200: rgb(221, 221, 221);
+  --gray-300: rgb(204, 204, 204);
+  --gray-400: rgb(149, 149, 149);
+  --gray-500: rgb(97, 97, 97);
+  --gray-600: rgb(68, 68, 68);
+  --gray-700: rgb(56, 56, 56);
+  --gray-800: rgb(34, 34, 34);
+  --gray-900: rgb(23, 23, 23);
+  --black: rgb(0, 0, 0);
+
+  --main-500: rgb(236, 124, 117);
+  --main-600: rgb(232, 90, 81);
+}
+
+body {
+  background: var(--white);
+  font-family: "Inter", sans-serif, system-ui;
+  /* max-width: 100vw; */
+  /* max-width: 100dvw; */
+}

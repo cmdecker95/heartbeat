@@ -1,5 +1,8 @@
 ---
+import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
+import "../styles/global.css";
+import "../styles/reset.css";
 
 interface Props {
   title: string;
@@ -10,8 +13,6 @@ interface Props {
 const { title, description, image = "/fallback.jpg" } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-const today = new Date();
 ---
 
 <!doctype html>
@@ -38,17 +39,11 @@ const today = new Date();
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-    <style>
-      :root {
-        --heartbeat-red: 359deg, 92%, 63%;
-        --heartbeat-red-hover: 358deg, 90%, 66%;
-      }
-    </style>
     <title>{title}</title>
   </head>
-  <body class="bg-red-50">
-    <header><Nav /></header>
+  <body>
+    <Nav />
     <slot />
-    <footer>&copy; {today.getFullYear()}</footer>
+    <Footer />
   </body>
 </html>
