@@ -6,11 +6,15 @@ import "../styles/reset.css";
 
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
 }
 
-const { title, description, image = "/fallback.jpg" } = Astro.props;
+const {
+  title,
+  description = "Heartbeat of Columbiana",
+  image = "/fallback.jpg",
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -32,6 +36,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:site_name" content="Heartbeat of Columbiana" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
@@ -45,7 +50,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       src="https://kit.fontawesome.com/f9c20afa88.js"
       crossorigin="anonymous"></script>
 
-    <title>{title}</title>
+    <title>{title} - Heartbeat of Columbiana</title>
   </head>
   <body>
     <Nav />
