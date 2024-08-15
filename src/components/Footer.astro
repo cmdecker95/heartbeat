@@ -1,11 +1,81 @@
 ---
-const today = new Date();
+const socials = [
+  {
+    href: "https://www.facebook.com/heartbeatofcolumbianacounty/",
+    icon: "fa-brands fa-facebook-f",
+  },
+  {
+    href: "/contact",
+    icon: "fa-solid fa-envelope",
+  },
+  {
+    href: "/contact",
+    icon: "fa-solid fa-phone",
+  },
+  {
+    href: "/give",
+    icon: "fa-solid fa-hand-holding-heart",
+  },
+];
 ---
 
-<footer class="">&copy; {today.getFullYear()}</footer>
+<footer>
+  <ul id="socials">
+    {
+      socials.map((s) => (
+        <a href={s.href}>
+          <i class={s.icon} />
+        </a>
+      ))
+    }
+  </ul>
+  <ul id="sitemap">
+    <a href="/resources">Resources</a>
+    <a href="/blog">Blog</a>
+    <a href="/events">Events</a>
+    <a href="/participate">Participate</a>
+  </ul>
+</footer>
 
 <style>
-  footer {
-    padding: 1rem 0;
+  #socials {
+    align-items: center;
+    background: var(--gray-700);
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    padding: 1.2rem 0;
+  }
+  #socials a {
+    background: var(--main-600);
+    border-radius: 50%;
+    color: var(--white);
+    display: grid;
+    height: 32px;
+    padding: 0.5rem;
+    place-items: center;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    width: 32px;
+  }
+  #socials a:hover {
+    background: var(--main-500);
+  }
+  #sitemap {
+    align-items: center;
+    background: var(--gray-600);
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    padding: 1.2rem 0;
+  }
+  #sitemap a {
+    color: var(--gray-400);
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  #sitemap a:hover {
+    color: var(--white);
   }
 </style>
