@@ -1,0 +1,155 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Parenting Support" description="Parenting Support">
+  <main>
+    <header>
+      <Image
+        src="/assets/parenting-support.jpg"
+        alt="Parenting Support"
+        width={800}
+        height={600}
+      />
+      <div class="text">
+        <h1>Parenting Support</h1>
+        <p>
+          At Heartbeat, we understand that navigating the journey of parenthood
+          can be both exciting and overwhelming.
+        </p>
+      </div>
+    </header>
+    <p>
+      We're here to offer a helping hand, a listening ear, and a supportive
+      community every step of the way. Our program is designed to empower those
+      who are starting the adventure of pregnancy, learning how to navigate
+      parenthood, and seeking to develop essential life skills.
+    </p>
+    <p>
+      Whether preparing for the arrival of a little one, mastering the art of
+      parenting, or striving to enhance everyday life skills, our program is
+      here to guide our families. We offer a wide range of resources and
+      support, including:
+    </p>
+    <ul>
+      <li>
+        <strong>Parenting Guidance</strong>: Our experienced Parent Coaches
+        provide personalized support and guidance tailored to your unique needs
+        and circumstances. From pregnancy to toddlerhood, we're here to help you
+        navigate every stage of parenthood with confidence and grace.
+      </li>
+      <li>
+        <strong>Life Skills Development</strong>: From budgeting and job
+        interview preparation to home care and beyond, our program equips you
+        with the practical skills you need to thrive in all aspects of life.
+      </li>
+      <li>
+        <strong>Bible Studies</strong>: Deepen your faith and find solace in our
+        supportive community through enriching Bible studies that explore God's
+        wisdom and guidance.
+      </li>
+      <li>
+        <strong>Cornerstone Cash Rewards</strong>: As you successfully complete
+        lessons sent by your Parent Coach, you'll earn Cornerstone Cash that can
+        be redeemed at our Baby Boutique. This allows you to purchase essential
+        items for your little ones, ensuring they have everything they need to
+        thrive.
+      </li>
+      <li>
+        <strong>Supportive Community</strong>: Join a warm and welcoming
+        community of fellow parents who understand the joys and challenges of
+        parenthood. Connect with others, share experiences, and find
+        encouragement every step of the way.
+      </li>
+    </ul>
+    <p>
+      Our curriculum, provided by Bright Course, is rooted in evidence-based
+      practices, ensuring that you receive the highest quality education and
+      support. Whether seeking guidance, resources, a listening ear, or simply a
+      safe space to share their journey, Heartbeat of Columbiana County is here.
+    </p>
+    <p>
+      We invite you to join us on this beautiful journey of parenthood, where
+      love, support, and faith come together to create a nurturing environment
+      for families in need of support. Get in touch with us today to learn more.
+    </p>
+
+    <div class="cta">
+      <a href="/contact"><span>Contact Us Today</span></a>
+    </div>
+  </main>
+
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 4rem;
+      margin: 0 auto 4rem;
+    }
+    header {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-block: 4rem;
+      place-items: center;
+      width: 100%;
+    }
+    header img {
+      border-radius: 20px;
+      box-shadow:
+        0 0 10px var(--gray-200),
+        0 0 20px var(--gray-100);
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 40ch;
+    }
+    .text {
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    p,
+    li {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 160%;
+      max-width: 80ch;
+      margin-inline: auto;
+    }
+    :is(p, li, ul) + :is(p, li, ul) {
+      margin-top: 2rem;
+    }
+    li {
+      padding-left: 2rem;
+    }
+    .cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      margin-bottom: 6rem;
+    }
+    a {
+      background: var(--main-600);
+      border-radius: 300px;
+      display: grid;
+      height: 100%;
+      padding: 0.8rem 1.8rem;
+      place-items: center;
+      text-decoration: none;
+      transition: 0.1s ease;
+      width: fit-content;
+    }
+    a:hover {
+      background: var(--main-500);
+    }
+    span {
+      color: var(--white);
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  </style>
+</Layout>
