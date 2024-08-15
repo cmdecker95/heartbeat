@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 interface Props {
   image: string;
 }
@@ -8,7 +6,7 @@ interface Props {
 const { image } = Astro.props;
 ---
 
-<div style={{backgroundImage: `url(${image})`}} class="hero-image">
+<div style={{ backgroundImage: `url(${image})` }} class="hero-image">
   <h1><span>Services</span></h1>
 </div>
 
