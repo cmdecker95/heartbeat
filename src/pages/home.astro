@@ -3,9 +3,68 @@ import Layout from "../layouts/Layout.astro";
 import BlogCarousel from "../components/BlogCarousel.astro";
 import Horizontal from "../components/Horizontal.astro";
 
-const peopleBlogs = [
-  { title: "Challenges Give Way To Hope", slug: "challenges-give-way-to-hope" },
-];
+const posts = {
+  people: [
+    {
+      title: "Challenges Give Way To Hope",
+      slug: "challenges-give-way-to-hope",
+      image: "/assets/baby-feet.jpg",
+      imageAlt: "Baby feet",
+    },
+    {
+      title: "Challenges Give Way To Hope",
+      slug: "challenges-give-way-to-hope",
+      image: "/assets/baby-feet.jpg",
+      imageAlt: "Baby feet",
+    },
+    {
+      title: "Challenges Give Way To Hope",
+      slug: "challenges-give-way-to-hope",
+      image: "/assets/baby-feet.jpg",
+      imageAlt: "Baby feet",
+    },
+  ],
+  announcements: [
+    {
+      title: "Challenges Give Way To Hope",
+      slug: "challenges-give-way-to-hope",
+      image: "/assets/baby-feet.jpg",
+      imageAlt: "Baby feet",
+    },
+    {
+      title: "Challenges Give Way To Hope",
+      slug: "challenges-give-way-to-hope",
+      image: "/assets/baby-feet.jpg",
+      imageAlt: "Baby feet",
+    },
+    {
+      title: "Challenges Give Way To Hope",
+      slug: "challenges-give-way-to-hope",
+      image: "/assets/baby-feet.jpg",
+      imageAlt: "Baby feet",
+    },
+  ],
+  beyond: [
+    {
+      title: "Challenges Give Way To Hope",
+      slug: "challenges-give-way-to-hope",
+      image: "/assets/baby-feet.jpg",
+      imageAlt: "Baby feet",
+    },
+    {
+      title: "Challenges Give Way To Hope",
+      slug: "challenges-give-way-to-hope",
+      image: "/assets/baby-feet.jpg",
+      imageAlt: "Baby feet",
+    },
+    {
+      title: "Challenges Give Way To Hope",
+      slug: "challenges-give-way-to-hope",
+      image: "/assets/baby-feet.jpg",
+      imageAlt: "Baby feet",
+    },
+  ],
+};
 ---
 
 <Layout title="Home">
@@ -23,15 +82,15 @@ const peopleBlogs = [
     </section>
     <section id="people">
       <h2>Meet Some Of The People We've Helped</h2>
-      <BlogCarousel blogs={peopleBlogs} />
+      <BlogCarousel posts={posts.people} />
     </section>
     <section id="announcements">
       <h2>See What's Happening At Heartbeat</h2>
-      <BlogCarousel />
+      <BlogCarousel posts={posts.announcements} />
     </section>
     <section id="beyond">
       <h2>Pro-Life Beyond Heartbeat</h2>
-      <BlogCarousel />
+      <BlogCarousel posts={posts.beyond} />
     </section>
   </main>
 </Layout>
@@ -53,6 +112,7 @@ const peopleBlogs = [
   h2 {
     font-size: 2.4rem;
     font-weight: 500;
+    margin-bottom: 1.6rem;
     width: fit-content;
   }
   p {
