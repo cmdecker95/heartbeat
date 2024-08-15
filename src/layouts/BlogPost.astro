@@ -1,27 +1,31 @@
 ---
 import FormattedDate from "../components/FormattedDate.astro";
+import Horizontal from "../components/Horizontal.astro";
 import Layout from "./Layout.astro";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, upDate, image, imageAlt } = Astro.props;
+const { title, author, description, pubDate, upDate, image, imageAlt } = Astro.props;
 ---
 
 <Layout {title} {description} {image}>
   <main>
     <article>
-      <header class="hero-image">
-        {
-          image && (
-            <Image width={1000} height={500} src={image} alt={imageAlt || ""} />
-          )
-        }
-      </header>
+      {
+        image && (
+          <header class="hero-image">
+            <Image width={900} height={450} src={image} alt={imageAlt || ""} />
+          </header>
+        )
+      }
 
       <div class="prose">
         <div class="title">
+          <h1>{title}</h1>
+          <Horizontal />
+          <div class="author">By {author}</div>
           <div class="date">
             <FormattedDate date={pubDate} />
             {
@@ -32,11 +36,58 @@ const { title, description, pubDate, upDate, image, imageAlt } = Astro.props;
               )
             }
           </div>
-          <h1>{title}</h1>
-          <hr />
         </div>
         <slot />
       </div>
     </article>
   </main>
 </Layout>
+
+<style>
+  article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0;
+    width: 100%;
+  }
+  .title {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  .author {
+    color: var(--gray-500);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .date {
+    color: var(--gray-500);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+  .prose {
+    font-size: 1.1rem;
+    line-height: 160%;
+    max-width: 80ch;
+  }
+
+  .prose a {
+    font-weight: 500;
+  }
+
+  .prose strong {
+    font-weight: 600;
+  }
+</style>
