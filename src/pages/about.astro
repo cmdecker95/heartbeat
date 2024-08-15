@@ -1,0 +1,162 @@
+---
+import ContentOnImage from "@components/ContentOnImage.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="About" description="Get to know Heartbeat of Columbiana County">
+  <ContentOnImage image="/assets/mom-smiling-at-baby.jpg">
+    <h1>About Heartbeat</h1>
+  </ContentOnImage>
+
+  <h2>Hear Our Heartbeat</h2>
+  <ul id="heartbeat">
+    <li>
+      <i class="fa-regular fa-hands-holding-child"></i>
+      <strong>Our Motivation</strong>
+      <p>
+        Heartbeat affirms the God-given value of all lives, including the
+        unborn, and we exist to empower women facing unplanned pregnancies to
+        choose life. We also believe that God's heart is for women and families
+        to be whole and healed.
+      </p>
+    </li>
+    <li>
+      <i class="fa-regular fa-hand-holding-medical"></i>
+      <strong>Our Strategy</strong>
+      <p>
+        Heartbeat empowers pregnant women by providing education, professional
+        medical care, resources, and encouragement. We support families by
+        providing parenting classes, coaching, and essential resources.
+        Heartbeat also provides opportunities for men and women to be healed
+        from past experiences with abortion.
+      </p>
+    </li>
+    <li>
+      <i class="fa-regular fa-cross"></i>
+      <strong>Our Objective</strong>
+      <p>
+        No matter the reason our clients come to us, our prayer is that they
+        will experience the hope that only Jesus can give in a way that
+        transforms families for generations.
+      </p>
+    </li>
+  </ul>
+
+  <ContentOnImage image="/assets/mom-and-kid-foreheads-touch.jpg">
+    <article>
+      <h2>Join Our Mission</h2>
+      <p>
+        To share the hope and love of Christ so effectively that every woman is
+        empowered to choose life.
+      </p>
+    </article>
+  </ContentOnImage>
+
+  <h2>Understand Our Values</h2>
+  <ul id="values">
+    <li>
+      <i class="fa-regular fa-message-heart"></i>
+      <strong>Lavish Love</strong>
+      <p>
+        We believe that God’s generous and gracious love, lived out through us,
+        is powerful and life-changing. It’s what draws people out of despair and
+        into hope. It enables people to choose life.
+      </p>
+    </li>
+    <li>
+      <i class="fa-regular fa-anchor"></i>
+      <strong>Stability</strong>
+      <p>
+        In a life turned upside-down by an unexpected pregnancy, we believe
+        Heartbeat is a place of refuge where a woman can find truth and clarity
+        to make choices she can live with.
+      </p>
+    </li>
+    <li>
+      <i class="fa-regular fa-hand-holding-seedling"></i>
+      <strong>Good Stewardship</strong>
+      <p>
+        Our God provides. Every blessing He pours out on Heartbeat is received
+        and shared with great care. We believe that we are accountable to our
+        God and our supporters to be diligent, generous and prayerful with all
+        we’re given.
+      </p>
+    </li>
+    <li>
+      <i class="fa-regular fa-laptop-mobile"></i>
+      <strong>Relevancy</strong>
+      <p>
+        The world has changed much since Heartbeat opened in 1986. We believe
+        it’s imperative that we continue to adapt to the changing needs of the
+        culture while standing firmly on the unchanging truth of the Bible.
+      </p>
+    </li>
+  </ul>
+</Layout>
+
+<style>
+  h1 {
+    color: var(--white);
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin: 4rem 0;
+    text-align: center;
+  }
+  ul {
+    display: grid;
+    grid-gap: 3rem;
+    max-width: fit-content;
+    margin: 4rem auto;
+  }
+  ul#heartbeat {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  ul#values {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 6rem;
+  }
+  li {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  li i {
+    color: var(--main-600);
+    font-size: 4rem;
+  }
+  li strong {
+    font-size: 2rem;
+  }
+  li p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 150%;
+    max-width: 35ch;
+    text-align: center;
+    text-wrap: balance;
+  }
+  article {
+    align-items: center;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+  }
+  article h2 {
+    margin: 0;
+  }
+  article p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 150%;
+    margin-top: 1rem;
+    max-width: 50ch;
+    text-align: center;
+    text-wrap: balance;
+  }
+</style>
