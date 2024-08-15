@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import NavLink from "./NavLink.astro";
 ---
 
-<nav class="flex justify-between align-center px-8 py-6">
+<nav>
   <a href="/">
     <Image
       src="/logo.png"
@@ -13,12 +13,27 @@ import NavLink from "./NavLink.astro";
     /></a
   >
 
-  <div class="group flex justify-end gap-4">
+  <ul>
     <NavLink href="/services" text="Services" />
     <NavLink href="/parenting-support" text="Parenting Support" />
     <NavLink href="/events" text="Events" />
     <NavLink href="/participate" text="Participate" />
     <NavLink href="/about" text="About" />
     <NavLink href="/give" text="Give" />
-  </div>
+  </ul>
 </nav>
+
+<style>
+  nav {
+    align-items: center;
+    color: var(--gray-900);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 1rem;
+  }
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+</style>
