@@ -1,33 +1,38 @@
 ---
 interface Props {
   image: string;
+  height: string;
+  width: string;
 }
 
-const { image } = Astro.props;
+const { image, height, width } = Astro.props;
 ---
 
-<div style={{ backgroundImage: `url(${image})` }} class="hero-image">
-  <h1><span>Services</span></h1>
+<div
+  class="backdrop"
+  style={{
+    backgroundImage: `url(${image})`,
+    height,
+    width,
+  }}
+>
+  <div class="overlay">
+    <slot />
+  </div>
 </div>
 
 <style>
-  .hero-image {
+  .backdrop {
     background-size: cover;
     height: 500px;
     position: relative;
     width: 100%;
   }
-  h1 {
+  .overlay {
     backdrop-filter: saturate(70%) contrast(50%) brightness(110%);
     display: grid;
     height: 100%;
     place-items: center;
     width: 100%;
-  }
-  span {
-    color: var(--white);
-    font-size: 5rem;
-    font-weight: 700;
-    text-transform: uppercase;
   }
 </style>
