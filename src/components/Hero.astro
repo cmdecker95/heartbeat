@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  image: string;
+}
+
+const { image } = Astro.props;
+---
+
+<div style={{backgroundImage: `url(${image})`}} class="hero-image">
+  <h1><span>Services</span></h1>
+</div>
+
+<style>
+  .hero-image {
+    background-size: cover;
+    height: 500px;
+    position: relative;
+    width: 100%;
+  }
+  h1 {
+    backdrop-filter: saturate(70%) contrast(50%) brightness(110%);
+    display: grid;
+    height: 100%;
+    place-items: center;
+    width: 100%;
+  }
+  span {
+    color: var(--white);
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+</style>
