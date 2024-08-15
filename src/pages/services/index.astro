@@ -1,12 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Horizontal from "../components/Horizontal.astro";
-import ImageSection from "../components/ImageSection.astro";
+import Layout from "@layouts/Layout.astro";
+import ContentOnImage from "@components/ContentOnImage.astro";
+import Horizontal from "@components/Horizontal.astro";
+import ImageSection from "@components/ImageSection.astro";
 ---
 
 <Layout title="Services">
-  <Hero image="/assets/super-baby.jpg" />
+  <ContentOnImage image="/assets/super-baby.jpg">
+    <h1>Services</h1>
+  </ContentOnImage>
+
   <section id="who-we-help">
     <h2>How We Help</h2>
     <Horizontal />
@@ -43,6 +46,12 @@ import ImageSection from "../components/ImageSection.astro";
 </Layout>
 
 <style>
+  h1 {
+    color: var(--white);
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
   section {
     align-items: center;
     display: flex;

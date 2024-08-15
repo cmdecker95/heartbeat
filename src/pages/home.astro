@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import BlogCarousel from "../components/BlogCarousel.astro";
-import Horizontal from "../components/Horizontal.astro";
+import Layout from "@layouts/Layout.astro";
+import BlogCarousel from "@components/BlogCarousel.astro";
+import Horizontal from "@components/Horizontal.astro";
 
 const posts = {
   people: [
@@ -67,7 +67,7 @@ const posts = {
 };
 ---
 
-<Layout title="Home">
+<Layout title="Home" description="Homepage for Heartbeat of Columbiana County">
   <main>
     <section id="heartbeat">
       <h2>Our Heartbeat</h2>
@@ -100,6 +100,7 @@ const posts = {
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin-bottom: 6rem;
     max-width: 100%;
   }
   section {

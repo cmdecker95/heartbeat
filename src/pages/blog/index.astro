@@ -1,13 +1,12 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+import FormattedDate from "@components/FormattedDate.astro";
+import Layout from "@layouts/Layout.astro";
 
-type Props = CollectionEntry<"blog">;
+type Post = CollectionEntry<"blog">;
 
-const posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
-  (a: Props, b: Props) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+const posts: Post[] = (await getCollection("blog")).sort(
+  (a: Post, b: Post) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 );
 ---
 
@@ -19,7 +18,12 @@ const posts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
           posts.map((post) => (
             <li>
               <a href={`/blog/${post.slug}/`}>
-                <img width={720} height={360} src={post.data.image} alt={post.data.imageAlt} />
+                <img
+                  width={720}
+                  height={360}
+                  src={post.data.image}
+                  alt={post.data.imageAlt}
+                />
                 <h4 class="title">{post.data.title}</h4>
                 <p class="date">
                   <FormattedDate date={post.data.pubDate} />

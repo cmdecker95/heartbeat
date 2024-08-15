@@ -1,13 +1,15 @@
 ---
-import FormattedDate from "../components/FormattedDate.astro";
-import Horizontal from "../components/Horizontal.astro";
-import Layout from "./Layout.astro";
 import { Image } from "astro:assets";
+import FormattedDate from "@components/FormattedDate.astro";
+import Horizontal from "@components/Horizontal.astro";
+import Layout from "@layouts/Layout.astro";
+
 import type { CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, author, description, pubDate, upDate, image, imageAlt } = Astro.props;
+const { title, author, description, pubDate, upDate, image, imageAlt } =
+  Astro.props;
 ---
 
 <Layout {title} {description} {image}>
